@@ -6,6 +6,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <meta property="og:title" content="{% block title %}{% endblock title %}" />
+  <meta property="og:description" content="by Dr. Abhimanyu Singh" />
+  <meta property="og:image" content="{{ url_for('static', filename='home.jpeg') }}" />
+  <!-- <meta property="og:image" content="https://midnightmusings.netlify.app/img/home_2.jpeg" /> -->
+
+
   <title> Midnight Musings </title>
 
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+{% for post in posts %}
+<div class="post-preview">
+  <a class="action" href="{{ url_for('blog.display', id=post['id']) }}">
+    <h1 class="post-title"> {{ post['title'] }} </h1>
+  </a>
+  <p class="post-meta">by {{ post['name'] }} <br>
+    <date> {{ post['date_posted'] }} </date>
+  </p>
+</div>
+{% if not loop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+{% endblock content%}

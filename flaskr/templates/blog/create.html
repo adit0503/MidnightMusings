@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<article class="post">
+  <header>
+    <div>
+      <h1> Create a Blog Post here </h1>
+    </div>
+  </header>
+</article>
+<br>
+
+<form method="post">
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <input type="date" name="date_posted" id="date_posted" value="{{ request.form['date_posted'] }}" required>
+    </div>
+  </div>
+  <br>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <input type="text" class="form-control" name="title" id="title" value="{{ request.form['title'] }}" placeholder="Title" required>
+    </div>
+  </div>
+  <br>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <!-- <label for="body">Body</label> -->
+      <textarea rows="10" class="form-control" name="body" id="body" placeholder="Enter Blog Content Here">{{ request.form['body'] }}</textarea>
+    </div>
+  </div>
+  <br>
+  <input type="submit" class="btn btn-primary" value="Save">
+
+</form>
+{% endblock content %}

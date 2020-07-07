@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+<article class="post">
+  <header>
+    <div>
+      <h1> {% block title %}Editing "{{ post['title'] }}"{% endblock %} </h1>
+    </div>
+  </header>
+</article>
+<br>
+
+<form method="post">
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <input type="date" name="date_posted" id="date_posted" value="{{ request.form['date_posted'] or post['date_posted'] }}" required>
+    </div>
+  </div>
+  <br>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <input type="text" class="form-control" name="title" id="title" value="{{ request.form['title'] or post['title'] }}" required>
+    </div>
+  </div>
+  <br>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <textarea rows="10" class="form-control" name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
+    </div>
+  </div>
+  <br>
+  <input type="submit" class="btn btn-primary" value="Save">
+</form>
+
+<hr>
+
+<form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
+  <input class="danger btn btn-primary" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+</form>
+
+{% endblock content %}

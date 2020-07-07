@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<article class="post">
+  <header>
+    <div>
+      <h1>{{ post['title'] }}</h1>
+      <div class="about"> by <a href="https://www.facebook.com/abhimanyu.singh.940641" target="_blank">{{ post['name'] }}</a></div>
+    </div>
+    {% if g.user['id'] == post['author_id'] %}
+    <a class="action btn btn-primary" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
+    {% endif %}
+  </header>
+  <p class="body">{{ post['body'] }}</p>
+</article>
+{% endblock content%}

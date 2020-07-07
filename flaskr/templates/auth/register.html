@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<article class="post">
+  <header>
+    <div>
+      <h1> Register Here </h1>
+    </div>
+  </header>
+</article>
+<br>
+<form method="post">
+
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+    </div>
+  </div>
+  <br>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <input type="text" class="form-control" name="username" id="username" placeholder="UserID" required>
+    </div>
+  </div>
+  <br>
+
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+    </div>
+  </div>
+  <br>
+  <input type="submit" class="btn btn-primary" value="Register">
+
+</form>
+{% endblock %}
